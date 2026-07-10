@@ -21,7 +21,6 @@ class ActorSerializer(serializers.ModelSerializer):
         )
 
 
-
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -75,9 +74,15 @@ class MovieSessionSerializer(serializers.ModelSerializer):
 
 
 class MovieSessionListSerializer(MovieSessionSerializer):
-    movie_title = serializers.ReadOnlyField(source='movie_title')
-    cinema_hall_name = serializers.ReadOnlyField(source='cinema_hall_name')
-    cinema_hall_capacity = serializers.ReadOnlyField(source='cinema_hall_capacity')
+    movie_title = serializers.ReadOnlyField(
+        source='movie_title'
+    )
+    cinema_hall_name = serializers.ReadOnlyField(
+        source='cinema_hall_name'
+    )
+    cinema_hall_capacity = serializers.ReadOnlyField(
+        source='cinema_hall_capacity'
+    )
 
     class Meta:
         model = MovieSession
@@ -88,7 +93,6 @@ class MovieSessionListSerializer(MovieSessionSerializer):
             'cinema_hall_name',
             'cinema_hall_capacity'
         )
-
 
 
 class MovieSessionRetrieveSerializer(MovieSessionSerializer):
