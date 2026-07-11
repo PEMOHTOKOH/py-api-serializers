@@ -75,7 +75,7 @@ class MovieSessionSerializer(serializers.ModelSerializer):
 
 class MovieSessionListSerializer(MovieSessionSerializer):
     movie_title = serializers.ReadOnlyField(
-        source='movie_title'
+        source="movie_title"
     )
     cinema_hall_name = serializers.ReadOnlyField(
         source='cinema_hall_name'
