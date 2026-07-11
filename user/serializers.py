@@ -7,7 +7,7 @@ from user.models import User
 class GenreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Genre
-        fields = ('id', 'name')
+        fields = ("id", "name")
 
 
 class ActorSerializer(serializers.ModelSerializer):
@@ -58,7 +58,7 @@ class MovieListSerializer(MovieSerializer):
     genres = serializers.SlugRelatedField(
         many=True,
         read_only=True,
-        slug_field='name'
+        slug_field="name"
     )
 
 
@@ -78,20 +78,20 @@ class MovieSessionListSerializer(MovieSessionSerializer):
         source="movie_title"
     )
     cinema_hall_name = serializers.ReadOnlyField(
-        source='cinema_hall_name'
+        source="cinema_hall_name"
     )
     cinema_hall_capacity = serializers.ReadOnlyField(
-        source='cinema_hall_capacity'
+        source="cinema_hall_capacity"
     )
 
     class Meta:
         model = MovieSession
         fields = (
-            'id',
-            'show_time',
-            'movie_title',
-            'cinema_hall_name',
-            'cinema_hall_capacity'
+            "id",
+            "show_time",
+            "movie_title",
+            "cinema_hall_name",
+            "cinema_hall_capacity"
         )
 
 
@@ -102,8 +102,8 @@ class MovieSessionRetrieveSerializer(MovieSessionSerializer):
     class Meta:
         model = MovieSession
         fields = (
-            'id',
-            'show_time',
-            'movie',
-            'cinema_hall',
+            "id",
+            "show_time",
+            "movie",
+            "cinema_hall",
         )
